@@ -9,14 +9,17 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   public nameE:String  | null ;
   public charge:String  | null ;
+  searchTerm: any;
 
 
-  constructor(
-    private router: Router,
-  ){
+  constructor(private router: Router) {
     this.nameE=localStorage.getItem('name');
     this.charge=localStorage.getItem('charge');
 
+  }
+  onSearch() {
+    // Redirigir a la ruta del sidebar y pasar el término de búsqueda como parámetro
+    this.router.navigate(['/sidebar', { searchTerm: this.searchTerm }]);
   }
   ngOnInit(): void {
 
@@ -33,6 +36,8 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
   //  this.router.navigate([''])
   }
+
+
 
 
 }
