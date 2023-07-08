@@ -58,7 +58,7 @@ export class CustomerEditComponent implements OnInit {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Cliente editado',
+            title: 'Cliente editado con exito',
             showConfirmButton: false,
             timer: 1500,
             toast: true,
